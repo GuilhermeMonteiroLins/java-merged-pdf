@@ -41,7 +41,6 @@ public class MergedPdf extends javax.swing.JPanel {
      * This method initializes the components in a customized way.
      */
     private void initComponentCustom() {
-        this.pgbStatusMerge.setVisible(false);
 
         this.modelTable = new ModelTablePDFs();
         this.modelTable.setColumnWidth(tblFilesMerged, 0, 100);
@@ -65,7 +64,6 @@ public class MergedPdf extends javax.swing.JPanel {
 
         lblWelcome = new javax.swing.JLabel();
         btnOpenFileChooser = new javax.swing.JButton();
-        pgbStatusMerge = new javax.swing.JProgressBar();
         txtNameFileMerged = new javax.swing.JTextField();
         lblNamefile = new javax.swing.JLabel();
         btnMergedFiles = new javax.swing.JButton();
@@ -90,8 +88,6 @@ public class MergedPdf extends javax.swing.JPanel {
                 btnOpenFileChooserActionPerformed(evt);
             }
         });
-
-        pgbStatusMerge.setStringPainted(true);
 
         lblNamefile.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblNamefile.setForeground(new java.awt.Color(255, 255, 255));
@@ -145,15 +141,14 @@ public class MergedPdf extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblWelcome, javax.swing.GroupLayout.DEFAULT_SIZE, 402, Short.MAX_VALUE)
+                    .addComponent(lblWelcome, javax.swing.GroupLayout.DEFAULT_SIZE, 490, Short.MAX_VALUE)
                     .addComponent(pnlFilesMerged, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(lblNamefile)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtNameFileMerged))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(pgbStatusMerge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btnMergedFiles))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(btnOpenFileChooser)
@@ -176,10 +171,8 @@ public class MergedPdf extends javax.swing.JPanel {
                     .addComponent(txtNameFileMerged, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblNamefile))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnMergedFiles)
-                    .addComponent(pgbStatusMerge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addComponent(btnMergedFiles)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -287,7 +280,7 @@ public class MergedPdf extends javax.swing.JPanel {
                     merger.merge(pdfDoc, 1, pdfDoc.getNumberOfPages());
                 }
             }
-
+            
             // Close document merged
             merger.close();
 
@@ -330,7 +323,6 @@ public class MergedPdf extends javax.swing.JPanel {
     private javax.swing.JButton btnRemovePdfs;
     private javax.swing.JLabel lblNamefile;
     private javax.swing.JLabel lblWelcome;
-    private javax.swing.JProgressBar pgbStatusMerge;
     private javax.swing.JPanel pnlFilesMerged;
     private javax.swing.JScrollPane scFilesMerged;
     private javax.swing.JTable tblFilesMerged;
